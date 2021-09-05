@@ -1,0 +1,61 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>choice</name>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>1</string>
+              <string>2</string>
+              <string>3</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+function menu()
+{
+echo &quot;1. Bash&quot;
+echo &quot;2. Scripting&quot;
+echo &quot;3. Tutorial&quot;
+echo -n &quot;Please enter your choice [1, 2 or 3]? : &quot;
+}
+
+menu
+
+if [ $choice -eq 1 ] ; then
+      echo &quot;You have chosen word : Bash&quot;
+      else
+	      if [ $choice -eq 2 ] ; then
+		      echo &quot;You have chosen word : Scripting&quot;
+	      else      
+		      if [ $choice -eq 3 ] ; then
+			      echo &quot;You have chosen word : Tutorial&quot;
+		      fi
+	       fi
+fi	   
+
+</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
