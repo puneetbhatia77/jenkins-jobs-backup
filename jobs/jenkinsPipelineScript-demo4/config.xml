@@ -1,0 +1,39 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.40">
+  <actions/>
+  <description>jenkins script pipeline demo project</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.86">
+    <script>node {
+      
+	for (i=0; i&lt;2; i++) { 
+           
+		stage &quot;Stage #&quot;+i
+           
+		print &apos;Hello, world !&apos;
+          
+		if (i==0)
+           
+		{
+               
+			echo &apos;Running on Stage #0&apos;
+          
+		 }
+           
+		else {
+               
+			build &apos;JenkinsPipelineDemo1&apos;
+              
+			 echo &apos;Running on Stage #1&apos;
+           
+		}
+      
+	}
+
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

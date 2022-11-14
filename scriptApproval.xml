@@ -1,0 +1,75 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1118.vba21ca2e3286">
+  <approvedScriptHashes>
+    <string>948051cfc0676bcde2226db12608dbd3aa9bee5b</string>
+  </approvedScriptHashes>
+  <approvedSignatures/>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <pendingScripts>
+    <pendingScript>
+      <context/>
+      <script>node {
+      
+	for (i=0; i&lt;2; i++) { 
+           
+		stage &quot;Stage #&quot;+i
+           
+		print &apos;Hello, world !&apos;
+          
+		if (i==0)
+           
+		{
+               
+			echo &apos;Running on Stage #0&apos;
+          
+		 }
+           
+		else {
+               
+			build &apos;JenkinsPipelineDemo1&apos;
+              
+			 echo &apos;Running on Stage #1&apos;
+           
+		}
+      
+	}
+
+}</script>
+      <language>groovy</language>
+    </pendingScript>
+    <pendingScript>
+      <context/>
+      <script>node {
+      
+	for (i=0; i&lt;2; i++) { 
+           
+		stage &quot;Stage #&quot;+i
+           
+		print &apos;Hello, world !&apos;
+          
+		if (i==0)
+           
+		{
+               
+			echo &apos;Running on Stage #0&apos;
+          
+		 }
+           
+		else {
+               
+			build &apos;JenkinsPipelineDemo-1&apos;
+              
+			 echo &apos;Running on Stage #1&apos;
+           
+		}
+      
+	}
+
+}</script>
+      <language>groovy</language>
+    </pendingScript>
+  </pendingScripts>
+  <pendingSignatures/>
+  <pendingClasspathEntries/>
+</scriptApproval>

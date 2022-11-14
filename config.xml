@@ -1,0 +1,369 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors>
+    <string>jenkins.diagnostics.ControllerExecutorsNoAgents</string>
+    <string>jenkins.diagnostics.RootUrlNotSetMonitor</string>
+    <string>jenkins.security.QueueItemAuthenticatorMonitor</string>
+  </disabledAdministrativeMonitors>
+  <version>2.325</version>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>hudson.model.Hudson.Administer:admin</permission>
+    <permission>hudson.model.Hudson.Read:test</permission>
+    <permission>hudson.model.Hudson.Read:test1</permission>
+    <permission>hudson.model.Hudson.Read:test2</permission>
+    <permission>hudson.model.Hudson.Read:test3</permission>
+    <permission>hudson.model.Hudson.Read:test4</permission>
+    <permission>hudson.model.Hudson.Read:teststaragile</permission>
+    <permission>hudson.model.Hudson.Read:testuser</permission>
+    <permission>hudson.model.Hudson.Read:testuser1</permission>
+    <permission>hudson.model.Item.Build:test</permission>
+    <permission>hudson.model.Item.Build:test1</permission>
+    <permission>hudson.model.Item.Build:test2</permission>
+    <permission>hudson.model.Item.Build:test3</permission>
+    <permission>hudson.model.Item.Build:test4</permission>
+    <permission>hudson.model.Item.Build:teststaragile</permission>
+    <permission>hudson.model.Item.Build:testuser</permission>
+    <permission>hudson.model.Item.Build:testuser1</permission>
+    <permission>hudson.model.Item.Read:test</permission>
+    <permission>hudson.model.Item.Read:test1</permission>
+    <permission>hudson.model.Item.Read:test2</permission>
+    <permission>hudson.model.Item.Read:test3</permission>
+    <permission>hudson.model.Item.Read:test4</permission>
+    <permission>hudson.model.Item.Read:teststaragile</permission>
+    <permission>hudson.model.Item.Read:testuser</permission>
+    <permission>hudson.model.Item.Read:testuser1</permission>
+    <permission>hudson.model.View.Read:test</permission>
+    <permission>hudson.model.View.Read:test1</permission>
+    <permission>hudson.model.View.Read:test2</permission>
+    <permission>hudson.model.View.Read:test3</permission>
+    <permission>hudson.model.View.Read:test4</permission>
+    <permission>hudson.model.View.Read:teststaragile</permission>
+    <permission>hudson.model.View.Read:testuser</permission>
+    <permission>hudson.model.View.Read:testuser1</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>false</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks>
+    <jdk>
+      <name>JDK8</name>
+      <home>/usr/lib/jvm/java-8-openjdk-amd64</home>
+      <properties/>
+    </jdk>
+    <jdk>
+      <name>JDK-win</name>
+      <home>C:\Program Files\Java\jdk-17.0.1</home>
+      <properties/>
+    </jdk>
+  </jdks>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.5.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>Build pipeline</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
+        <firstJob>Developer-Compile</firstJob>
+        <firstJobLink>job/Developer-Compile/</firstJobLink>
+      </gridBuilder>
+      <noOfDisplayedBuilds>3</noOfDisplayedBuilds>
+      <buildViewTitle></buildViewTitle>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <cssUrl></cssUrl>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <rowHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.SimpleRowHeader"/>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <columnHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.NullColumnHeader"/>
+      <buildCard class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.StandardBuildCard"/>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Demo</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(Demo*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>dev</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(dev-j*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Jenkins Pipeline</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(JenkinsPipeline*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.5.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>Devops Pipeline</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
+        <firstJob>devops-compile</firstJob>
+        <firstJobLink>job/devops-compile/</firstJobLink>
+      </gridBuilder>
+      <noOfDisplayedBuilds>3</noOfDisplayedBuilds>
+      <buildViewTitle></buildViewTitle>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <cssUrl></cssUrl>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <rowHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.SimpleRowHeader"/>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <columnHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.NullColumnHeader"/>
+      <buildCard class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.StandardBuildCard"/>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>test</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(test-j*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.5.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>qa</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <rowHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.SimpleRowHeader"/>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <columnHeaders class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.NullColumnHeader"/>
+      <buildCard class="au.com.centrumsystems.hudson.plugin.buildpipeline.extension.StandardBuildCard"/>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>QA</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(qa-j*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>advanced</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="java.lang.String$CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn plugin="warnings-ng@9.10.2">
+          <selectTools>false</selectTools>
+          <tools>
+            <io.jenkins.plugins.analysis.core.model.ToolSelection>
+              <id></id>
+            </io.jenkins.plugins.analysis.core.model.ToolSelection>
+          </tools>
+          <name># Issues</name>
+          <labelProviderFactory>
+            <jenkins plugin="plugin-util-api@2.8.0"/>
+          </labelProviderFactory>
+          <type>TOTAL</type>
+        </io.jenkins.plugins.analysis.core.columns.IssuesTotalColumn>
+      </columns>
+      <includeRegex>(advanced*).*</includeRegex>
+      <recurse>false</recurse>
+    </listView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label>Linux</label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  <nodeProperties/>
+  <globalNodeProperties/>
+  <nodeRenameMigrationNeeded>false</nodeRenameMigrationNeeded>
+</hudson>

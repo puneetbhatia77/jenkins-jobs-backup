@@ -1,0 +1,32 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1145.v7f2433caa07f">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty plugin="gitlab-plugin@1.5.25">
+      <gitLabConnection></gitLabConnection>
+      <jobCredentialId></jobCredentialId>
+      <useAlternativeCredential>false</useAlternativeCredential>
+    </com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2648.va9433432b33c">
+    <script>node(&apos;windows&apos;) {
+	stage (&apos;SCM checkout&apos;){
+		git &quot;https://github.com/puneetbhatia77/selenium-Jenkinspipeline&quot;
+		}
+	stage (&apos;Build&apos;){
+    	dir(&quot;comtest&quot;) {
+	   bat &quot;mvn clean install&quot;
+       }
+	}
+    stage (&apos;test&apos;) {
+    	bat &quot;java -jar comtest/target/com.test-1.0-SNAPSHOT.jar&quot;
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
