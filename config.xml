@@ -5,7 +5,7 @@
     <string>jenkins.diagnostics.RootUrlNotSetMonitor</string>
     <string>jenkins.security.QueueItemAuthenticatorMonitor</string>
   </disabledAdministrativeMonitors>
-  <version>2.325</version>
+  <version>2.326</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
